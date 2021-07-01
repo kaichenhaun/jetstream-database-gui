@@ -17,11 +17,13 @@ mongoose.connection.once('open', () => {
     console.log("MongoDB connection established");
 })
 
-const exercisesRouter = require('./routes/exercises');
 const usersRouter = require('./routes/users');
+const connectorsRouter = require("./routes/connectors");
+const subscriptionsRouter = require("./routes/subscriptions");
 
-app.use('/exercises', exercisesRouter);
 app.use('/users', usersRouter);
+app.use('/connectors', connectorsRouter);
+app.use('/subscriptions', subscriptionsRouter);
 
 app.listen(port, () => {
     console.log("Running on port: "+port);

@@ -3,21 +3,19 @@ import {BrowserRouter as Router, Route} from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import Navbar from "./components/navbar.component.js";
-import ExercisesListComponent from "./components/exercises-list.component.js";
-import EditExerciseComponent from "./components/edit-exercise.component.js";
-import CreateExerciseComponent from "./components/create-exercise.component.js";
-import CreateUserComponent from "./components/create-user.componenta.js";
+import UsersComponent from "./components/users.component.js";
+import ConnectorsComponent from "./components/connectors.component";
+import SubscriptionsComponent from "./components/subscriptions.component";
 
 function App() {
   return (
       <Router>
-          <div className="container">
+          <div className="container" >
               <Navbar/>
               <br/>
-              <Route path="/" exact component={ExercisesListComponent}/>
-              <Route path="/edit/:id" component={EditExerciseComponent}/>
-              <Route path="/create" component={CreateExerciseComponent}/>
-              <Route path="/user" component={CreateUserComponent}/>
+              <Route path="/users" component={UsersComponent}/>
+              <Route path="/connectors" component={ConnectorsComponent}/>
+              <Route path="/subscriptions" component={SubscriptionsComponent}/>
           </div>
       </Router>
   );
